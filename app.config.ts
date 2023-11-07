@@ -27,7 +27,7 @@ export default defineAppConfig({
     },
     socials: {
       twitter: '',
-      instagram: 'nr.bln',
+      instagram: 'nr.bln'
     },
     form: {
       successMessage: 'Message sent. Thank you!'
