@@ -28,11 +28,6 @@ export default defineAppConfig({
     socials: {
       twitter: '',
       instagram: 'nr.bln',
-      linkedin: {
-        icon: 'uil:linkedin',
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/company/nuxtlabs'
-      }
     },
     form: {
       successMessage: 'Message sent. Thank you!'
