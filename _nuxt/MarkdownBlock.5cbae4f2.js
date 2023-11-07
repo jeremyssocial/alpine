@@ -1,1 +1,0 @@
-import"./MDCSlot.51bf84e6.js";import{r}from"./slot.17d488a5.js";import{k as e,b as t,c as s}from"./entry.d5833678.js";const a={},c={class:"max-w-full overflow-x-auto"};function n(o,l){return t(),s("pre",c,[r(o.$slots,"default",{unwrap:"p"})])}const m=e(a,[["render",n]]);export{m as default};
