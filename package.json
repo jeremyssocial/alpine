@@ -17,5 +17,8 @@
     "@types/node": "^20.7.1",
     "eslint": "^8.50.0",
     "nuxt": "^3.7.4"
+  },
+  "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0"
   }
 }
