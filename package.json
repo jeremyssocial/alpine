@@ -19,7 +19,6 @@
     "nuxt": "^3.7.4"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0",
-    "@nuxtjs/sitemap": "^2.4.0"
+    "@nuxtjs/robots": "^3.0.0"
   }
 }
