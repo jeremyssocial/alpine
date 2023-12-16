@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     // https://github.com/nuxt/devtools
     '@nuxt/devtools',
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
+    '@nuxtjs/sitemap'
   ],
   robots: {
     UserAgent: '*',
@@ -21,5 +21,5 @@ export default defineNuxtConfig({
     exclude: [
       '/impressum'
     ],
-  },
+  }
 });
