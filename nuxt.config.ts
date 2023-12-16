@@ -7,10 +7,12 @@ export default defineNuxtConfig({
     '@nuxtjs/plausible',
     // https://github.com/nuxt/devtools
     '@nuxt/devtools',
-    '@nuxtjs/robots',
+    [
+      '@nuxtjs/robots',
+      {
+        UserAgent: '*',
+        Disallow: '/impressum',
+      },
+    ],
   ],
-  robots: {
-    UserAgent: '*',
-    Disallow: '/impressum',
-  }
 });
