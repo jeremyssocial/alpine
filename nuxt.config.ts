@@ -14,4 +14,12 @@ export default defineNuxtConfig({
     UserAgent: '*',
     Disallow: '/impressum',
   },
+  sitemap: {
+    // options
+    hostname: 'https://near-berlin.de',
+    gzip: true,
+    exclude: [
+      '/impressum'
+    ],
+  },
 });
