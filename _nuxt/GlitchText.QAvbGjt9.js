@@ -1,0 +1,1 @@
+import{b as e,c as a,e as s,t as c}from"./entry.9cKQtuyY.js";const r={class:"glitch-text"},i=["data-glitch"],h={__name:"GlitchText",props:{text:String},setup(t){return(n,o)=>(e(),a("span",r,[s("span",{"data-glitch":t.text,class:"glitch dark:text-primary-100"},c(t.text),9,i)]))}};export{h as default};
