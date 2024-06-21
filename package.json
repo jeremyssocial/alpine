@@ -19,6 +19,7 @@
     "nuxt": "^3.9.1"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0"
+    "@nuxtjs/robots": "^3.0.0",
+    "three": "^0.165.0"
   }
 }
