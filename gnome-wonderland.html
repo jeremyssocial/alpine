@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnome Wonderland - A Magical Journey</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #1a4d2e;
+            --secondary-color: #9cc094;
+            --accent-color: #f1c93b;
+            --text-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        h1, h2 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all var(--transition-speed) ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        #home {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/gnomes/gnome-1.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        #facts {
+            background-color: var(--secondary-color);
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fact-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+
+        .fact-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        #gallery {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        #contact {
+            background-color: var(--background-color);
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-30px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-15px) translateX(-50%);
+            }
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .fact-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a{
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section id="home" class="section">
+        <div class="container">
+            <h1>Welcome to Gnome Wonderland</h1>
+            <p>Embark on a magical journey through the enchanted realm of gnomes, where whimsy and wisdom intertwine.</p>
+            <a href="#facts" class="btn">Explore Now</a>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <section id="facts" class="section">
+        <div class="parallax-bg" style="background-image: url('/gnomes/gnome-2.png');"></div>
+        <div class="container">
+            <h2>Mystical Gnome Lore</h2>
+            <div class="fact-grid">
+                <div class="fact-card">
+                    <i class="fas fa-hat-wizard"></i>
+                    <h3>Enchanted Headwear</h3>
+                    <p>Gnome hats channel ancient magic, connecting wearers to the very essence of nature.</p>
+                </div>
+                <div class="fact-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Subterranean Sanctuaries</h3>
+                    <p>Gnome homes are marvels of eco-architecture, seamlessly blending with their natural surroundings.</p>
+                </div>
+                <div class="fact-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Botanical Virtuosos</h3>
+                    <p>Gnomes communicate with plants, nurturing rare flora crucial to the world's ecological balance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gnome Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/gnomes/gnome-3.png" alt="Magical gnome">
+                </div>
+                <div class="gallery-item">
+                    <img src="/gnomes/gnome-4.png" alt="Hole gnome">
+                </div>
+                <div class="gallery-item">
+                    <img src="/gnomes/gnome-5.png" alt="The elder gnome">
+                </div>
+                <div class="gallery-item">
+                    <img src="/gnomes/gnome-6.png" alt="Gnome portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="parallax-bg" style="background-image: url('/gnomes/gnome-6.png');"></div>
+        <div class="container">
+            <h2>DO NOT Contact the Gnomes</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required disabled>
+                <input type="email" placeholder="Your Email" required disabled>
+                <textarea placeholder="Your Message" rows="5" required disabled></textarea>
+                <button type="submit" class="btn" disabled>Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <a href="https://near-berlin.de/">nr.bln</a><br>
+            <a href="/impressum">Impressum</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const parallaxBgs = document.querySelectorAll('.parallax-bg');
+            parallaxBgs.forEach(bg => {
+                const scrollPosition = window.pageYOffset;
+                bg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            });
+        });
+
+        // Intersection Observer for fade-in effects
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fact-card, .gallery-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+
+        // Form submission (for demonstration purposes)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! The gnomes will respond shortly.');
+            this.reset();
+        });
+
+        // Easter egg: Konami code to summon a gnome
+        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    summonGnome();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        function summonGnome() {
+            const gnome = document.createElement('div');
+            gnome.style.position = 'fixed';
+            gnome.style.bottom = '-100px';
+            gnome.style.left = '50%';
+            gnome.style.transform = 'translateX(-50%)';
+            gnome.style.fontSize = '100px';
+            gnome.textContent = '🧙‍♂️';
+            gnome.style.transition = 'bottom 1s ease-in-out';
+            document.body.appendChild(gnome);
+
+            setTimeout(() => {
+                gnome.style.bottom = '20px';
+            }, 100);
+
+            setTimeout(() => {
+                gnome.style.bottom = '-100px';
+                setTimeout(() => {
+                    gnome.remove();
+                }, 1000);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
